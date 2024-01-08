@@ -11,10 +11,12 @@ router.route("/create").post((req, res) => {
     });
 
     newNote.save();
+    res.json({ message: "succuss" })
 })
 
 router.route("/notes").get((req, res) => {
     Note.find()
+
         .then(foundNotes => res.json(foundNotes))
 })
 
